@@ -25,22 +25,7 @@
         </ul>
       </nav>
       <a href="#" class="request-btn">request invite</a>
-      <div class="icons">
-        <a href="#" class="close-menu"
-          ><img src="assets/images/icon-close.svg" alt=""
-        /></a>
-        <a href="#" class="show-menu"
-          ><img class="show-menu" src="assets/images/icon-hamburger.svg" alt=""
-        /></a>
-      </div>
-      <div class="menu-btns">
-        <a href="#" class="show-menu"
-          ><img src="assets/images/icon-hamburger.svg" alt=""
-        /></a>
-        <a href="#" class="close-menu"
-          ><img src="assets/images/icon-close.svg" alt=""
-        /></a>
-      </div>
+      <div class="menu-btns"></div>
     </header>
     <section id="presentation">
       <div class="presentation-container">
@@ -214,16 +199,14 @@
 
 
     <script>
-      const showMenu = document.querySelector('.show-menu')
-      const closeMenu = document.querySelector('.close-menu')
+      const menuBtns = document.querySelector('.menu-btns')
       const navBar = document.querySelector('nav');
 
-      showMenu.addEventListener('click', ()=>{
-        navBar.classList.add('active');
+      menuBtns.addEventListener('click', ()=>{
+        menuBtns.classList.toggle('active');
+        navBar.classList.toggle('active');
       })
-      closeMenu.addEventListener('click', ()=>{
-        navBar.classList.remove('active');
-      })
+      
     </script>
   </body>
 </html>

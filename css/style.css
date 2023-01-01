@@ -6,9 +6,7 @@
   box-sizing: border-box;
   text-decoration: none;
 }
-.menu-btns a {
-  display: none;
-}
+
 #easyBank_logo img {
   width: 177px;
   margin-top: 10px;
@@ -27,14 +25,12 @@
 .request-btn.active {
   transform: scale(0.92);
 }
-.icons img {
-  display: inline-block;
-  margin-right: 14px;
-  width: 20px;
-  height: 20px;
+.menu-btns {
+  background: url("../assets/images/icon-hamburger.svg") no-repeat;
+  background-position: center;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
-}
-.icons {
   display: none;
 }
 body {
@@ -46,10 +42,10 @@ header {
   box-shadow: 0px 6px 2px -3px rgba(0, 0, 0, 0.1);
   padding: 25px 170px;
   width: 100%;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 nav ul li {
   list-style: none;
@@ -304,15 +300,38 @@ footer .sec-1 .social-icons a img {
   }
 }
 @media screen and (max-width: 875px) {
-  nav {
+  header nav {
     display: none;
+  }
+  header nav.active {
+    display: block;
+    background: #fff;
+    position: absolute;
+    top: 230px;
+    padding: 30px;
+    border-radius: 10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    max-width: 600px;  
+    width: 80%;
+    margin: auto;
+    box-shadow: -2px 6px 5px 2px rgba(0,0,0,0.59);
+  }
+  .menu-btns{
+    display: block;
+  }
+  .menu-btns.active {
+    background: url("../assets/images/icon-close.svg") no-repeat;
+    background-position: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
   }
   header .request-btn {
     display: none;
   }
-  .menu-btns .show-menu {
-    display: block;
-  }
+
   .presentation-container {
     flex-direction: column-reverse;
     padding: 0;
@@ -344,25 +363,13 @@ footer .sec-1 .social-icons a img {
     flex-direction: column;
     margin: 17px 0;
   }
-  nav{
-    display: none;
-    background: #fff;
-    position: absolute;
-    top: 230px;
-    padding: 30px;
-    border-radius: 10px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    min-width: 430px;
-  }
-  nav ul{
+  header nav ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  nav ul li a{
+  header nav ul li a {
     display: inline-block;
     margin: 10px 0;
   }
